@@ -1,21 +1,22 @@
 ﻿# OpenWebUI Docker Automation
 
-## 🚀 Overview
+## 🚀 Overview  
+This repository contains automation scripts for managing **OpenWebUI and pipeline components** using Docker. It simplifies updates, resets, and ensures containers are healthy, especially for self-hosted setups like NAS environments.  
 
-This repository contains automation scripts for managing **OpenWebUI and pipeline components** using Docker. It simplifies updates, resets, and ensures containers are healthy, especially for self-hosted setups like NAS environments.
+## 🛠️ What is OpenWebUI Docker Automation?  
+OpenWebUI Docker Automation is a set of **bash scripts** designed to **simplify self-hosting and container management** for OpenWebUI. If you're running OpenWebUI on a **NAS** and using Ollama on a **separate GPU-powered machine**, this project provides essential automation to keep everything updated and running smoothly.  
 
-## 📌 Features
+### 🚀 Why Use These Scripts?  
+Managing Docker containers manually can be time-consuming. These scripts allow you to:  
+- **Automatically update OpenWebUI** with the latest image.  
+- **Effortlessly reset and redeploy pipeline containers** without lingering conflicts.  
+- **Run health checks** to ensure proper functionality after updates.  
+- **Optimize container deployment** for NAS-hosted environments.  
 
--   **Automated updates** for OpenWebUI
-    
--   **Container cleanup and fresh deployment** for pipelines
-    
--   **Health checks** for stability verification
-    
--   **Customizable ports and environment variables**
-    
--   **Optimized for NAS and local deployments**
-    
+## 🌐 Deployment Context  
+This setup assumes **OpenWebUI is running on a NAS**, while **Ollama is hosted separately on a computer with a GPU** for optimized performance.  
+Users can modify environment variables like `OLLAMA_BASE_URL` to point to their specific setup.  
+---
 
 ## ⚙️ Scripts
 
@@ -44,7 +45,7 @@ This script **updates and restarts the OpenWebUI container** in Docker. It perfo
 | `VOLUME_NAME`  | Persistent volume for storing backend data. |
 | `LOG_FILE`  | Log file to track script execution steps. |
 
-
+---
 ### **2️⃣ reset_pipelines.sh**
 
 This script **cleans and restarts the pipelines container**. It follows these steps:
@@ -59,7 +60,7 @@ This script **cleans and restarts the pipelines container**. It follows these st
     
 5.  **Performs a verification check** to confirm proper deployment.
     
-
+---
 #### 🔹 Variables in `reset_pipelines.sh`
 
 | Variable        | Description |
@@ -72,7 +73,7 @@ This script **cleans and restarts the pipelines container**. It follows these st
 | `CUSTOM_PIPELINES_URL`  | Optional URL for custom pipeline scripts (default is empty). |
 | `DB_PORT`  | PostgreSQL database port (**default 5432**). |
 | `PIPELINES_REQUIREMENTS_PATH`  | Path to pipeline dependencies in the container (`/app/pipelines/requirements.txt`). |
-
+---
 ## 🛠️ Installation & Usage
 
 Make scripts executable and run:
@@ -92,7 +93,7 @@ chmod +x reset_pipelines.sh
 ./reset_pipelines.sh  
 
 ```
-
+---
 ## 📝 Configuration
 
 Modify these variables in scripts as needed:
