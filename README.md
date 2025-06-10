@@ -94,16 +94,22 @@ chmod +x reset_pipelines.sh
 
 ```
 ---
-## 📝 Configuration
+### Shell Compatibility (`sh` → `bash`)  
+By default, these scripts use **`sh`**, ensuring compatibility with most Unix-based systems. However, if your setup requires **additional features**, or you prefer **explicit Bash scripting**, simply replace `sh` with `bash` in execution commands and script headers.  
+For example:  
+```sh
+#!/bin/bash
 
-Modify these variables in scripts as needed:
+```
 
--   **OpenWebUI port:** The default is **3000**, but it was changed due to conflicts.
-    
--   **NAS compatibility:** Works well in NAS setups but can be used elsewhere.
-    
--   **Switching to Bash:** Scripts use `sh`, but you can adapt them to `bash`.
-    
+instead of
+
+sh
+
+```
+#!/bin/sh
+
+```
 
 ## ⚠️ Notes
 
