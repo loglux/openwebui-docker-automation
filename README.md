@@ -111,22 +111,3 @@ sh
 
 ```
 
-## ⚠️ Notes
-
--   Check logs if issues arise:
-    
-    sh
-    
-    ```
-    docker logs open-webui  
-    
-    ```
-    
--   If you need custom pipelines, define `CUSTOM_PIPELINES_URL`.
-    
--   Volume cleanup ensures fresh deployments—back up your data if necessary.
-    
-
-## 🏗️ Contributions
-
-Suggestions and improvements are welcome! If you extend these scripts for **custom OpenWebUI use cases**, feel free to share.
