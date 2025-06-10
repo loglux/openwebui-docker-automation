@@ -34,37 +34,16 @@ This script **updates and restarts the OpenWebUI container** in Docker. It perfo
 
 #### 🔹 Variables in `update_openwebui.sh`
 
-Variable
+| Variable        | Description |
+|----------------|-------------|
+| `CONTAINER_NAME`  | Name of the OpenWebUI container in Docker (`open-webui`). |
+| `IMAGE_NAME`  | Repository path for OpenWebUI’s latest image (`ghcr.io/open-webui/open-webui:main`). |
+| `HOST_PORT`  | External port for OpenWebUI (**default is 3000**, but modified in this setup). |
+| `CONTAINER_PORT`  | Internal container port (**default 3000** in OpenWebUI). |
+| `OLLAMA_BASE_URL`  | API base URL used by OpenWebUI (customizable). |
+| `VOLUME_NAME`  | Persistent volume for storing backend data. |
+| `LOG_FILE`  | Log file to track script execution steps. |
 
-Description
-
-`CONTAINER_NAME`
-
-Name of the OpenWebUI container in Docker (`open-webui`).
-
-`IMAGE_NAME`
-
-Repository path for OpenWebUI’s latest image (`ghcr.io/open-webui/open-webui:main`).
-
-`HOST_PORT`
-
-External port for OpenWebUI (default is **3000**, but modified in this setup).
-
-`CONTAINER_PORT`
-
-Internal container port (**default 3000** in OpenWebUI).
-
-`OLLAMA_BASE_URL`
-
-API base URL used by OpenWebUI (customizable).
-
-`VOLUME_NAME`
-
-Persistent volume for storing backend data.
-
-`LOG_FILE`
-
-Log file to track script execution steps.
 
 ### **2️⃣ reset_pipelines.sh**
 
@@ -83,41 +62,16 @@ This script **cleans and restarts the pipelines container**. It follows these st
 
 #### 🔹 Variables in `reset_pipelines.sh`
 
-Variable
-
-Description
-
-`CONTAINER_NAME`
-
-Name of the pipelines container in Docker (`pipelines`).
-
-`IMAGE_NAME`
-
-Repository path for pipelines image (`ghcr.io/open-webui/pipelines:main`).
-
-`HOST_PORT`
-
-External port used for pipelines (**default 9099**).
-
-`CONTAINER_PORT`
-
-Internal port used by pipelines (**default 9099**).
-
-`PIPELINES_VOLUME`
-
-Name of the volume where pipeline data is stored.
-
-`CUSTOM_PIPELINES_URL`
-
-Optional URL for custom pipeline scripts (default is empty).
-
-`DB_PORT`
-
-PostgreSQL database port (**default 5432**).
-
-`PIPELINES_REQUIREMENTS_PATH`
-
-Path to pipeline dependencies in the container (`/app/pipelines/requirements.txt`).
+| Variable        | Description |
+|----------------|-------------|
+| `CONTAINER_NAME`  | Name of the pipelines container in Docker (`pipelines`). |
+| `IMAGE_NAME`  | Repository path for pipelines image (`ghcr.io/open-webui/pipelines:main`). |
+| `HOST_PORT`  | External port used for pipelines (**default 9099**). |
+| `CONTAINER_PORT`  | Internal port used by pipelines (**default 9099**). |
+| `PIPELINES_VOLUME`  | Name of the volume where pipeline data is stored. |
+| `CUSTOM_PIPELINES_URL`  | Optional URL for custom pipeline scripts (default is empty). |
+| `DB_PORT`  | PostgreSQL database port (**default 5432**). |
+| `PIPELINES_REQUIREMENTS_PATH`  | Path to pipeline dependencies in the container (`/app/pipelines/requirements.txt`). |
 
 ## 🛠️ Installation & Usage
 
