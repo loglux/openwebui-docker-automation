@@ -3,9 +3,9 @@
 # Container and image details
 CONTAINER_NAME="open-webui"
 IMAGE_NAME="ghcr.io/open-webui/open-webui:main"
-HOST_PORT=3030
+HOST_PORT=3000
 CONTAINER_PORT=8080
-OLLAMA_BASE_URL="http://192.168.10.229:11434"
+OLLAMA_BASE_URL="http://192.168.1.10:11434"
 VOLUME_NAME="open-webui:/app/backend/data"
 
 # Log file for tracking script execution
