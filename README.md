@@ -96,5 +96,4 @@ chmod +x reset_pipelines.sh
 ---
 ### Shell Compatibility
 These scripts are written for **POSIX `sh`** and are intended to run with `#!/bin/sh` on common Unix-like systems, including lightweight NAS environments.  
-If you choose to switch to **`bash`**, make sure the target system has Bash installed and keep the script syntax consistent with that choice.
 
