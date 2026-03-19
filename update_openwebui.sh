@@ -59,7 +59,7 @@ MAX_WAIT=60
 WAIT_INTERVAL=5
 TIME_WAITED=0
 
-while [[ $TIME_WAITED -lt $MAX_WAIT ]]; do
+while [ "$TIME_WAITED" -lt "$MAX_WAIT" ]; do
   if curl -s "http://localhost:$HOST_PORT/health" | grep -q '"status":true'; then
     log "Container is running and healthy."
     break
@@ -70,7 +70,7 @@ while [[ $TIME_WAITED -lt $MAX_WAIT ]]; do
   fi
 done
 
-if [[ $TIME_WAITED -ge $MAX_WAIT ]]; then
+if [ "$TIME_WAITED" -ge "$MAX_WAIT" ]; then
   log "Container health check failed after $MAX_WAIT seconds. Please check the logs!"
   exit 1
 fi

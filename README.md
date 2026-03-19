@@ -4,7 +4,7 @@
 This repository contains automation scripts for managing **OpenWebUI and pipeline components** using Docker. It simplifies updates, resets, and ensures containers are healthy, especially for self-hosted setups like NAS environments.  
 
 ## 🛠️ What is OpenWebUI Docker Automation?  
-OpenWebUI Docker Automation is a set of **bash scripts** designed to **simplify self-hosting and container management** for OpenWebUI. If you're running OpenWebUI on a **NAS** and using Ollama on a **separate GPU-powered machine**, this project provides essential automation to keep everything updated and running smoothly.  
+OpenWebUI Docker Automation is a set of **shell scripts** designed to **simplify self-hosting and container management** for OpenWebUI. If you're running OpenWebUI on a **NAS** and using Ollama on a **separate GPU-powered machine**, this project provides essential automation to keep everything updated and running smoothly.  
 
 ### 🚀 Why Use These Scripts?  
 Managing Docker containers manually can be time-consuming. These scripts allow you to:  
@@ -40,7 +40,7 @@ This script **updates and restarts the OpenWebUI container** in Docker. It perfo
 | `CONTAINER_NAME`  | Name of the OpenWebUI container in Docker (`open-webui`). |
 | `IMAGE_NAME`  | Repository path for OpenWebUI’s latest image (`ghcr.io/open-webui/open-webui:main`). |
 | `HOST_PORT`  | External port for OpenWebUI (**default is 3000**, but modified in this setup). |
-| `CONTAINER_PORT`  | Internal container port (**default 3000** in OpenWebUI). |
+| `CONTAINER_PORT`  | Internal container port (**default 8080** in this setup). |
 | `OLLAMA_BASE_URL`  | API base URL used by OpenWebUI (customizable). |
 | `VOLUME_NAME`  | Persistent volume for storing backend data. |
 | `LOG_FILE`  | Log file to track script execution steps. |
@@ -94,20 +94,7 @@ chmod +x reset_pipelines.sh
 
 ```
 ---
-### Shell Compatibility (`sh` → `bash`)  
-By default, these scripts use **`sh`**, ensuring compatibility with most Unix-based systems. However, if your setup requires **additional features**, or you prefer **explicit Bash scripting**, simply replace `sh` with `bash` in execution commands and script headers.  
-For example:  
-```sh
-#!/bin/bash
-
-```
-
-instead of
-
-sh
-
-```
-#!/bin/sh
-
-```
+### Shell Compatibility
+These scripts are written for **POSIX `sh`** and are intended to run with `#!/bin/sh` on common Unix-like systems, including lightweight NAS environments.  
+If you choose to switch to **`bash`**, make sure the target system has Bash installed and keep the script syntax consistent with that choice.
 
